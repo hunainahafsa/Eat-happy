@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/RecipeLogo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Express Eat</title>
+</head>
+<body>
+
+    <!--- Navigation Bar -->
+    <div class="header">
+        <nav class="nav-bar">
+            <img src="./img/Logos_     Logos.jpeg" class="brand-name">
+            <a href="#" class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="menu-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Search Bar -->
+        <div class="title">Find a Recipe</div>
+        <div class="search-wrapper">
+            <div class="fa fa-search"></div>
+            <input type="text" name=""  id="search" placeholder="What do you want to eat?" onkeyup="search()">
+            <div class="fa fa-times" onclick="clearInput()" ></div>
+        </div>
+    </div>
+
+    <!-- Search Results -->
+        <div class="result">
+            <h1>Your Search Result: </h1>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="card-grid" >
+            <div class="food-list" id="food-list">
+                    <p id="none" style="display: none;">Sorry, the food you were looking for was not available.</p>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Biryani.jpeg">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Biryani </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="getRecipeDetails()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Buttermilk Pancakes - Wood & Spoon.jpeg">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Buttermilk pancake </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get2ndRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/pizza.jpeg">
+                        </div>
+                        <div class="card-body" >
+                            <h3>Pizza</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get3rdRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Omelette.webp">
+                        </div>
+                        <div class="card-body" >
+                            <h3>Omelette</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get4thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/spaghetti.jpeg">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Spaghetti </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get5thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/frenchtoast.jpeg">
+                        </div>
+                        <div class="card-body" >
+                        <h3> French toast</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get6thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/rajmachawal.jpeg">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Rajma Chawal</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get7thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Burger.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Chicken Burger</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get8thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/avacado toast.jpeg">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Avocado toast</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get9thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Tapsilog.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Tapsilog</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get10thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Potato-Breakfast-Skillet.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Potato Egg Skillet</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get11thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+            </div> 
+
+            <!--Ending of Main Content-->
+
+            <!--Recipe Details-->
+            <div class = "meal-detail" id="meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Biryani</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Biryani is a fragrant, flavorful rice dish originating from the Indian subcontinent and popular across South Asia and the Middle East. Known for its rich taste and aromatic spices, biryani typically consists of long-grain rice, such as basmati, layered with marinated meat (often chicken, beef, mutton, or fish) or vegetables. The layers are seasoned with a mix of spices including cardamom, cloves, cinnamon, bay leaves, and star anise, creating a complex flavor profile. It often includes yogurt, fried onions, saffron, and fresh herbs like cilantro and mint, which enhance its aroma and taste.. </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br> MARINATING CHICKEN
+                            <br>500g chicken (cut into pieces) 
+                            <br>1 cup yogurt
+                            <br>1 tablespoon ginger-garlic paste
+                            <br>1 teaspoon red chili powder
+                            <br>1 teaspoon turmeric powder
+                            <br>1 teaspoon garam masala powder
+                            <br>1 teaspoon cumin powder
+                            <br>Salt to taste
+                            <br>Juice of 1 lemon
+                            <br>Fresh mint and cilantro leaves (a handful, chopped)
+                            <br>For the Rice:
+                            <br>2 cups basmati rice (soaked for 30 minutes)
+                            <br>4 cups water
+                            <br>2-3 green cardamom pods
+                            <br>2-3 cloves
+                            <br>1 bay leaf
+                            <br>1 cinnamon stick
+                            <br>Salt to taste
+                            <br>For Cooking:
+                            <br>2-3 tablespoons oil or ghee
+                            <br>1 large onion (thinly sliced)
+                            <br>1 teaspoon saffron strands (optional, soaked in 2 tablespoons warm milk for color and aroma)
+                            
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1 Marinate the Chicken:
+                            <br>In a bowl, mix the chicken pieces with yogurt, ginger-garlic paste, red chili powder, turmeric powder, garam masala, cumin powder, salt, lemon juice, mint, and cilantro.
+                            <br>Cover and let it marinate in the refrigerator for at least 1 hour (overnight is ideal).
+                            <br>2 Cook the Rice:
+                            <br>Bring water to a boil in a large pot. Add the whole spices (cardamom, cloves, bay leaf, cinnamon) and salt.
+                            <br>Add the soaked and drained rice and cook until it is 70-80% cooked. The rice should be slightly firm when bitten.
+                            <br>Drain the rice and set it aside.
+                            <br>3  Cook the Chicken:
+                            <br>Heat oil or ghee in a heavy-bottomed pot or Dutch oven. Add the sliced onions and fry until golden brown and crisp.
+                            <br>Remove half of the onions and set them aside for garnishing.
+                            <br>Add the marinated chicken to the pot with the remaining onions and cook for 8-10 minutes until the chicken is just done.
+                            <br>4  Layering the Biryani:
+                            <br>Reduce the heat to low and layer half of the cooked rice over the chicken.
+                            <br>Sprinkle a few saffron strands with their milk, half of the fried onions, and a few mint and cilantro leaves.
+                            <br>Layer the remaining rice and garnish with the rest of the fried onions, saffron milk, and fresh herbs.
+                            <br>5 Cooking on Dum (Steaming):
+                            <br>Cover the pot with a tight lid (or seal it with a dough rim if you’re aiming for a traditional dum).
+                            <br>Cook on low heat for 15-20 minutes, allowing the flavors to infuse.
+                            <br>6 Serve:
+                            <br>Gently mix the biryani and serve hot with raita (yogurt sauce), salan (spicy curry), or boiled eggs.
+                            <br>Enjoy your flavorful biryani!</p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Biryani.jpeg" alt = "">
+                      </div>
+                      
+                </div>
+            </div>
+            <div class = "second-meal-detail" id="second-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Buttermilk pancake</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">Buttermilk pancake Meal</h3>
+                        <p class="meal-descript-about">Buttermilk pancakes are fluffy, golden-brown breakfast treats with a soft, airy texture and a hint of tanginess. Made with buttermilk, they have a slight acidity that reacts with baking soda, creating light, tender pancakes with a melt-in-your-mouth quality. Their surface often has tiny bubbles, giving them a beautiful, rustic appearance. Buttermilk pancakes are commonly served warm with toppings like maple syrup, fresh fruit, butter, or whipped cream, making them a classic, comforting dish enjoyed by many.. </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>2 l cup all-purpose flour
+                            <br>2 tablespoons granulated sugar
+                            <br>1 teaspoon baking powder
+                            <br>½ teaspoon baking soda ¼ teaspoon salt
+                            <br>¼ teaspoon salt
+                            <br>¼ cup milk (room temperature)
+                            <br>1 large egg (lightly beaten)
+                            <br>2 tablespoons unsalted butter (melted, plus extra for the pan)
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Combine Dry Ingredients: In a medium bowl, whisk together the flour, sugar, baking powder, baking soda, and salt.
+                            <br>2. Mix Wet Ingredients: In a separate bowl, mix the buttermilk, milk, egg, and melted butter until well combined.
+                            <br>3.Combine Wet and Dry Mixtures: Pour the wet ingredients into the dry ingredients. Gently stir until just combined. It’s okay if there are a few lumps; overmixing can make pancakes tough.
+                            <br>4. Preheat and Grease the Pan: Heat a griddle or non-stick skillet over medium heat. Lightly butter the surface once it’s hot.
+                            <br>5. Cook Pancakes: Pour ¼ cup of batter onto the griddle for each pancake. Cook for 2-3 minutes, or until you see bubbles forming on the surface and the edges look set. Flip and cook the other side for another 1-2 minutes until golden brown.
+                            <br>6. Serve: Serve warm with your favorite toppings—maple syrup, fresh berries, whipped cream, or a sprinkle of powdered sugar.
+                            <br>7. Enjoy your delicious, fluffy buttermilk pancakes!
+                            </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Buttermilk Pancakes - Wood & Spoon.jpeg" alt = "">
+                      </div>
+                </div>
+            </div>  
+            <div class = "third-meal-detail" id="third-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Pizza</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Pizza is a savory, versatile dish that originated in Italy and has become beloved worldwide. It typically consists of a round, flatbread crust topped with tomato sauce, cheese, and various toppings, then baked in an oven until the crust is golden and the cheese is melted and bubbly. The crust can range from thin and crispy (like in Italian Neapolitan pizza) to thick and chewy (like in American deep-dish pizza).. 
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>For the Pizza Dough:
+                            <br>2 ¼ teaspoons active dry yeast (or 1 packet)
+                            <br>1 ½ cups warm water (110°F or 43°C)
+                            <br>3 ½ to 4 cups all-purpose flour
+                            <br>2 tablespoons olive oil
+                            <br>1 teaspoon sugar
+                            <br>1 teaspoon salt
+                            <br>For the Pizza Sauce:
+                            <br>1 cup canned crushed tomatoes (or tomato sauce)
+                            <br>1 tablespoon olive oil
+                            <br>1 garlic clove (minced)
+                            <br>1 teaspoon dried oregano
+                            <br>1 teaspoon dried basil
+                            <br>Salt and pepper to taste
+                            <br>For Toppings:
+                            <br>2 cups shredded mozzarella cheese
+                            <br>Fresh basil leaves (optional)
+                            <br>Desired toppings (pepperoni, mushrooms, olives, bell peppers, onions, etc.)
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Prepare the Dough:
+                            <br>In a small bowl, dissolve the sugar in warm water, then sprinkle the yeast over it. Let it sit for 5-10 minutes until it becomes frothy.
+                            <br>In a large bowl, mix the flour and salt. Add the yeast mixture and olive oil, stirring until it forms a dough.
+                            <br>Knead the dough on a floured surface for about 8-10 minutes until smooth and elastic.
+                            <br>Place the dough in a lightly oiled bowl, cover, and let it rise in a warm place for 1-1.5 hours, or until it doubles in size.
+                            <br>2 Prepare the Pizza Sauce:
+                            In a small saucepan, heat the olive oil over medium heat and add the minced garlic. Sauté until fragrant, about 30 seconds.
+                            Add the crushed tomatoes, oregano, basil, salt, and pepper. Simmer for 10-15 minutes, stirring occasionally. Set aside to cool.
+                            <br>3. Preheat the Oven:
+                            Preheat your oven to its highest setting, usually around 475°F to 500°F (245°C to 260°C). Place a pizza stone or baking sheet in the oven to heat as well.
+                            <br>4. Assemble the Pizza:
+                            Once the dough has risen, punch it down and divide it into two equal parts.
+                            Roll each piece into a 12-inch circle on a lightly floured surface.
+                            Carefully transfer the dough onto a piece of parchment paper (for easy transfer to the oven).
+                            Spread a thin layer of sauce over each dough circle, leaving a 1-inch border around the edges.
+                            Sprinkle mozzarella cheese evenly over the sauce, then add any desired toppings.
+                            <br>5. Bake the Pizza:
+                            Using a pizza peel or baking sheet, carefully slide the parchment paper with the assembled pizza onto the preheated pizza stone or baking sheet.
+                            Bake for 10-12 minutes or until the crust is golden and the cheese is bubbly and slightly browned.
+                            <br>6 Serve:
+                            Remove the pizza from the oven and let it cool slightly before slicing. Add fresh basil leaves if desired, and enjoy your homemade pizza!
+                            </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/pizza.jpeg" alt = "">
+                      </div>
+                      
+                </div>
+            </div>  
+            <div class = "four-meal-detail" id="four-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Omelette</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">In cuisine, an omelette is a dish made from beaten eggs, fried with butter or oil in a frying pan. It is quite common for the omelette to be folded around fillings such as chives, vegetables, mushrooms, meat, cheese, onions or some combination of the above. 
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>3 eggs, beaten
+                            <br>1 tsp sunflower oil
+                            <br>1 tsp butter
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Beat the eggs: Use two or three eggs per omelette, depending on how hungry you are. Beat the eggs lightly with a fork.
+                            2. Melt the butter: Use an 8-inch nonstick skillet for a 2-egg omelette, a 9-inch skillet for 3 eggs. Melt the butter over medium-low heat, and keep the temperature low and slow when cooking the eggs so the bottom doesn’t get too brown or overcooked.
+                            3. Add the eggs: Let the eggs sit for a minute, then use a heatproof silicone spatula to gently lift the cooked eggs from the edges of the pan. Tilt the pan to allow the uncooked eggs to flow to the edge of the pan.
+                            4. Fill the omelette: Add the filling—but don’t overstuff the omelette—when the eggs begin to set. Cook for a few more seconds
+                            5. Fold and serve: Fold the omelette in half. Slide it onto a plate with the help of a silicone spatula.
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Omelette.webp" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://tinyurl.com/bde4yd4u" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div>  
+            <div class = "five-meal-detail" id="five-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Spaghetti</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Spaghetti is typically served with tomato-based sauces, such as marinara or bolognese, but also pairs well with creamy, oil-based, or seafood sauces. Classic dishes include Spaghetti alla Carbonara, with eggs, cheese, pancetta, and black pepper; Spaghetti Aglio e Olio, with garlic and olive oil; and Spaghetti with Meatballs, a popular Italian-American variation..
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>400g (14 oz) spaghetti
+                            <br>2 tablespoons olive oil
+                            <br>3-4 garlic cloves (minced)
+                            <br>1 can (400g or 14 oz) crushed tomatoes or tomato sauce
+                            <br>Salt and pepper to taste
+                            <br>1 teaspoon dried oregano or basil (optional)
+                            <br>Fresh basil leaves (for garnish, optional)
+                            <br>Grated Parmesan cheese (for serving, optional)
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Cook the Spaghetti:
+                            Bring a large pot of salted water to a boil. Add the spaghetti and cook according to package instructions until al dente.
+                            Drain the spaghetti, reserving about ½ cup of pasta water, and set aside.
+                            <br>2. Prepare the Sauce:
+                            In a large skillet, heat the olive oil over medium heat.
+                            Add the minced garlic and sauté for 1-2 minutes until fragrant, but avoid browning it.
+                            Pour in the crushed tomatoes and add salt, pepper, and oregano or basil if using.
+                            Simmer for 10-12 minutes, allowing the sauce to thicken slightly. Add a splash of pasta water if needed to reach desired consistency.
+                            <br>3. Combine and Serve:
+                            Add the cooked spaghetti to the sauce and toss to coat evenly.
+                            Serve immediately, garnished with fresh basil leaves and grated Parmesan cheese if desired.
+                            <br>Enjoy your simple, delicious spaghetti!!
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/spaghetti.jpeg" alt = "">
+                      </div>
+                      
+                </div>
+            </div> 
+            <div class = "six-meal-detail" id="six-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">French toast</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">French toast is a delightful breakfast dish made by soaking slices of bread in a mixture of beaten eggs, milk, and often a touch of cinnamon or vanilla, then frying them until golden brown. The result is a soft, custardy interior with a slightly crispy exterior..
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>4 large eggs
+                            <br>1 cup milk
+                            <br>1 teaspoon vanilla extract (optional)
+                            <br>1 teaspoon ground cinnamon (optional)
+                            <br>8 slices of bread (white, whole grain, brioche, or challah)
+                            <br>2 tablespoons butter (for frying)
+                            <br>Maple syrup (for serving)
+                            <br>Powdered sugar (for serving, optional)
+                            <br>Fresh fruit (for serving, optional)
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Prepare the Egg Mixture:
+                            In a large bowl, whisk together the eggs, milk, vanilla extract, and cinnamon until well combined.
+                            <br>2. Soak the Bread:  
+                            Heat a large skillet or griddle over medium heat and add a tablespoon of butter.
+                            Dip each slice of bread into the egg mixture, allowing it to soak for a few seconds on each side. Make sure the bread is coated but not overly soggy.
+                            <br>3. Cook the French Toast:      
+                            Once the butter is melted and bubbling, place the soaked bread slices onto the skillet.
+                            Cook for 2-3 minutes on each side, or until golden brown and cooked through. You can add more butter to the skillet as needed for additional batches.
+                            <br>4. Serve:
+                            Serve the French toast warm, topped with maple syrup, powdered sugar, and fresh fruit if desired.
+                            
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/frenchtoast.jpeg" alt = "">
+                      </div>
+                </div>
+            </div> 
+            <div class = "seven-meal-detail" id="seven-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Rajma Chawal</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Rajma Chawal is a popular North Indian dish consisting of kidney beans (rajma) cooked in a spiced tomato gravy, served alongside steamed rice (chawal). This hearty and comforting meal is known for its rich flavors and nutritional value, making it a staple in many Indian households..
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>For Rajma (Kidney Beans):
+                            <br>1 cup kidney beans (rajma), soaked overnight
+                            <br>2 tablespoons oil (vegetable or ghee)
+                            <br>1 large onion (finely chopped)
+                            <br>2-3 tomatoes (pureed or finely chopped)
+                            <br>1 teaspoon ginger-garlic paste
+                            <br>1 teaspoon cumin seeds
+                            <br>1 teaspoon coriander powder
+                            <br>1 teaspoon cumin powder
+                            <br>1 teaspoon garam masala
+                            <br>1 teaspoon red chili powder (adjust to taste)
+                            <br>Salt to taste
+                            <br>Fresh cilantro (for garnish)
+                            <br>For Chawal (Rice):
+                            <br>1 cup basmati rice
+                            <br>2 cups water
+                            <br>Salt to taste
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Cook the Rajma:
+                            Drain the soaked kidney beans and rinse them under running water.
+                            In a pressure cooker, add the kidney beans with enough water to cover them. Cook for about 4-5 whistles or until the beans are soft. (If using a pot, simmer until tender, which may take 1-1.5 hours.)
+                            Once cooked, drain excess water and set aside.
+                            <br>2. Prepare the Gravy:
+                            In a large pan, heat oil over medium heat. Add cumin seeds and let them splutter.
+                            Add the chopped onions and sauté until golden brown.
+                            Stir in the ginger-garlic paste and cook for 1-2 minutes until fragrant.
+                            Add the pureed or chopped tomatoes and cook until the oil separates from the mixture (about 5-7 minutes).
+                            Add coriander powder, cumin powder, garam masala, red chili powder, and salt. Mix well.
+                            Add the cooked kidney beans to the gravy, along with 1 cup of water (adjust for desired consistency). Stir and let it simmer for about 10-15 minutes, allowing the flavors to meld.
+                            <br>3. Cook the Chawal (Rice):
+                            Rinse the basmati rice under cold water until the water runs clear.
+                            In a pot, combine the rinsed rice, 2 cups of water, and salt. Bring it to a boil.
+                            Once boiling, reduce the heat to low, cover, and simmer for about 15 minutes or until the rice is cooked and water is absorbed.
+                            Remove from heat and let it sit covered for another 5 minutes. Fluff with a fork before serving.
+                            <br>4. Serve:
+                            Serve the rajma hot, garnished with fresh cilantro, alongside a generous serving of steaming rice. You can also pair it with pickles, yogurt, or a salad.
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/rajmachawal.jpeg" alt = "">
+                      </div>
+                </div>
+            </div> 
+            <div class = "eight-meal-detail" id="eight-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Chicken Burger</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Prepare the buns! For the ideal stuffing for juicy burgers, coat or marinate chicken thighs and breast. Dig it after adding toppings like slaw and sauce along with your selected side dishes.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>3 boneless chicken breasts (around half a kg)
+                            <br>1 tspn of pepper
+                            <br>1 tspn of salt
+                            <br>2 tblspns of worcestershire sauce
+                            <br>1 tspn of Mustard powder or all spice powder
+                            <br>2 tblspns of Flour
+                            <br>1 Egg
+                            <br>1 1/2 cups of Breadcrumbs
+                            <br>Soft seeded burger buns
+                            <br>Mayonnaise or KFC Zinger Sauce
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. If your chicken breasts are too big, slice them before cooking. Then, marinade the chicken breasts in the Worcestershire sauce, pepper, salt, mustard, or all-spice powder. Leave the chicken for at least four hours or over night.
+                            <br>2. An egg and two tablespoons of water should be beaten together to make the batter, which should then be set aside.
+                            <br>3. Chicken breasts that have been marinated should be heavily dusted in flour. They should be well coated after being dipped in both the egg and the breadcrumbs.
+                            <br>4. The coated chicken breasts should be deep-fried in heated oil over a medium-high heat until they are crisp and golden brown.
+                            <br>5. The finished burger should be stacked with the lettuce on top, followed by the chicken, and then the mayonnaise or KFC zinger sauce. The buns should be cut in half and lightly toasted. If you'd like a cheesy kick, add some sliced American cheese.
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Burger.webp" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://tinyurl.com/td757uct" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "nine-meal-detail" id="nine-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Avocado toast</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Avocado toast is a trendy and nutritious dish that features ripe, mashed avocado spread over toasted bread. This versatile meal is celebrated for its creamy texture, rich flavor, and health benefits, making it a popular choice for breakfast, brunch, or a light snack.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>2 ripe avocados
+                            <br>4 slices of bread (sourdough, whole grain, or your choice)
+                            <br>Salt (to taste)
+                            <br>Black pepper (to taste)
+                            <br>Lemon or lime juice (optional)
+                            <br>Red pepper flakes (optional)
+                            <br>Toppings of your choice (e.g., sliced tomatoes, radishes, poached eggs, feta cheese, microgreens)
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Toast the Bread:
+                            Toast the slices of bread until golden brown and crispy. You can use a toaster or a grill pan for this.
+                            <br>2. Prepare the Avocado:
+                            While the bread is toasting, cut the avocados in half, remove the pit, and scoop the flesh into a bowl.
+                            Mash the avocado with a fork until creamy, leaving some chunks if you prefer a bit of texture.
+                            <br>3. Season the Avocado:
+                            Add salt, black pepper, and a splash of lemon or lime juice to the mashed avocado. Mix well to combine.
+                            <br>4. Assemble the Toast:
+                            Spread a generous amount of the seasoned avocado on each slice of toasted bread.
+                            <br>5. Add Toppings:
+                            Top your avocado toast with additional ingredients of your choice, such as sliced tomatoes, radishes, a poached egg, crumbled feta, or microgreens. You can also sprinkle red pepper flakes for a bit of heat.
+                            <br>6. Serve:
+                            Enjoy your delicious and nutritious avocado toast immediately!
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/avacado toast.jpeg" alt = "">
+                      </div>
+                </div>
+            </div> 
+            <div class = "ten-meal-detail" id="ten-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Tapsilog</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">If there's one thing that could make a non-morning person scramble out of their bed before noon (your delivery rider calling you doesn't count, by the way), it's the intoxicating smell of sinangag (fried garlic rice), fried egg, and of course, tapa wafting through the air from the kitchen and into your room.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>1 lb. beef sirloin sliced thinly
+                            <br>3 pieces eggs
+                            <br>6 tablespoons cooking oil
+                            <br><b>Tapa marinade</b>
+                            <br>3 tablespoons Knorr Liquid Seasoning
+                            <br>6 cloves crushed garlic
+                            <br>¾ cups pineapple juice
+                            <br>2 tablespoons brown sugar
+                            <br>¼ teaspoon ground white pepper
+                            <br><b>Sinangag</b>
+                            <br>5 cups leftover rice
+                            <br>1 teaspoon salt
+                            <br>5 cloves garlic crushed
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Prepare the tapa by placing the beef in a large bowl. Combine with all the tapa marinade ingredients. Mix well and cover the bowl. Place inside the fridge and marinate overnight.
+                            <br>2. Cook the garlic fried rice (sinangag na kanin) by heating 3 tablespoons cooking oil in a pan. Add crushed garlic. Cook until garlic turns light brown. Add the leftover rice. Stir-fry for 3 minutes.
+                            <br>3. Season with salt. Continue to stir-fry for 3 to 5 minutes. Set aside.
+                            <br>4. Start to cook the tapa. Heat a pan and pour the marinated beef into it, including the marinade. Add ¾ cups water. Let the mixture boil. Cover the pan and continue to cook until the liquid reduces to half. Add 3 tablespoons cooking oil into the mixture. Continue to cook until the liquid completely evaporates. Fry the beef tapa in remaining oil until medium brown. Set aside.
+                            <br>5. Fry the egg by pouring 1 tablespoon oil on a pan. Crack a piece of egg and sprinkle enough salt on top. Cook for 30 seconds. Pour 2 tablespoons water on the side of the pan. Cover and let the water boil. Continue to cook until the egg yolks gets completely cooked by the steam.
+                            <br>6. Arrange the beef tapa, sinangag, and fried egg on a large plate to form Tapsilog. Serve with vinegar as dipping sauce for tapa.
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Tapsilog.webp" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://tinyurl.com/5xh9wjtw" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "eleven-meal-detail" id="four-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Potato Egg Skillet</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">In cuisine, an omelette is a dish made from beaten eggs, fried with butter or oil in a frying pan. It is quite common for the omelette to be folded around fillings such as chives, vegetables, mushrooms, meat, cheese, onions or some combination of the above. 
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>8 strips raw bacon
+                            <br>1 lbs Yukon gold potatoes, diced into bite sized pieces
+                            <br>1 small yellow onion, diced
+                            <br>½ red bell pepper, diced
+                            <br>½ green bell pepper, diced
+                            <br>3 cloves garlic, minced
+                            <br>1 teaspoon cumin
+                            <br>¼ teaspoon chili powder
+                            <br>¼ teaspoon paprika
+                            <br>½ teaspoon black pepper
+                            <br>½ teaspoon coarse salt
+                            <br>4 eggs
+                            <br>¼ cup mozzarella cheese, grated
+                            <br>¼ cup cheddar cheese, grated
+                            <br>Extra virgin olive oil for extra drizzling
+                            <br>Fresh cilantro roughly chopped, thinly sliced chives for garnish
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Preheat oven to 400˚F. Place strips of bacon in a large (at least 10 inch), oven safe skillet. Cook over medium low heat on both sides until cooked through but not yet crispy, about 10 minutes. Remove from heat to a paper towel lined plate and set aside, leaving the bacon grease in the pan. When the bacon is cool enough to handle, roughly dice.
+                            <br>Increase the heat to medium high, add the potatoes, bell pepper, and onion and cook for 7- 8 minutes, stirring frequently, until starting to soften and can be pierced with a fork
+                            <br>Add garlic, cumin, chili powder, paprika, black pepper, and salt. Cook for 1-2 minutes, until garlic is fragrant.
+                            <br>Using a spoon, create 4 to 6 holes (depending on how many eggs you want) in the hash mixture for the eggs. Distribute the cheeses evenly into each hole, and then crack one egg into each hole.
+                            <br>Place in the preheat oven and cook for 8-10 minutes, until egg white is set but the yolk is still runny.
+                            <br>Remove from heat. Sprinkle with cooked bacon. Garnish with fresh ground black pepper, cilantro and chives.
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Potato-Breakfast-Skillet.webp " alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://tinyurl.com/yz55k3bv" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            
+            
+        </div>
+            <!--Ending of Recipe Details-->
+
+            <!--Footer-->
+    <div class="footer">
+        <div class="social-btn">
+            <a href="https://www.instagram.com/hvffyk/" target="_blank" ><i class="	fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/hunainahafsa/" target="_blank"><i class="	fab fa-linkedin"></i></a>
+            <a href="https://github.com/hunainahafsa" target="_blank" "><i class="	fab fa-github"></i></a>
+        </div>
+            <div class="quick-bar">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        <p>Copyright &copy; 2024 . All right reserved</p>  
+    </div>
+
+    <!--Ending of Footer-->
+
+<!--Script for Javascript-->
+<script src="./assets/index.js"></script>
+</body>
+</html>
